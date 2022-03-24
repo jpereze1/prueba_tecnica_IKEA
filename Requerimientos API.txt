@@ -1,0 +1,34 @@
+Jornada de almuerzo ¡gratis!
+Un reconocido restaurante ha decidido tener una jornada de donación de comida a los residentes de la región. El administrador del restaurante requiere con urgencia un sistema que permita registrar a los residentes para tener un control de las entregas realizadas.
+¿En qué consiste?
+Un colaborador del restaurante tendrá acceso a una aplicación web que desplegará un formulario de registro con los siguientes campos:
+    • Nombre : Texto | Requerido
+    • Apellidos : Texto | Requerido
+    • Teléfono : Numérico
+    • Correo : Texto | Requerido
+    • Edad : Numérico | Requerido
+    • Dirección : Texto
+    • Comida Entregada : Boolean | Requerido | Default : false
+    • Observación : Texto Largo
+¿Cómo funciona?
+El operador podrá guardar, editar, leer o eliminar los registros desde las vistas que va a desarrollar el front-end developer. Estos datos y/o acciones llegarán a una API RestFull (Tu Papel dentro del equipo será desarrollar esta API) el cual va a procesar los datos realizando las siguientes acciones:
+    • CRUD del modelo de datos mencionados arriba.
+    • Estandarizar respuestas JSON.
+    • Validación de campos requeridos.
+    • Buscar por correo o nombre al realizar una búsqueda de un registro (A parte de la búsqueda por ID).
+    • Filtrar por edad mayor a menor.
+    • Filtrar por nombre de la A a la Z.
+    • Paginado de registros, 10 registros por página, organizado desde el más reciente al más viejo.
+La tecnología a utilizar deben ser las siguientes:
+    • BDD: MySQL o PostgreSQL
+    • Lenguaje: Python, Java o PHP
+    • Frameworks: Flask, Spring o Laravel
+
+Entregable
+Debes compartir un repositorio en github al usuario BitBoxCaribe, que contenga un README explicando lo siguiente:
+    • Resumen de lo que hace el sistema o app desarrollada.
+    • Librerías usadas incluyendo resumen de lo que hace la misma o que papel tiene dentro de la app.
+    • Pasos requeridos para montar la app en un entorno.
+    • Estructura del proyecto.
+    • URLs de acciones y como implementarlo de forma detallada.
+

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Jornada de almuerzos{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/styles.css') }}"/>
+</head>
+<body>
+    <!--Cabecera de la pagina-->
+    <header>
+        <div id= "logotipo">
+            <img src="{{ url_for('static', filename='image/comida2.png')}}" >
+            <h1>Jornada de almuerzos</h1>
+        </div>
+    </header>
+    <nav>
+        <ul>
+            <li>
+                <a href="{{ url_for('index') }}">inicio</a>
+            </li>
+            <li>
+                <a href="{{ url_for('formulario')}}">Formulario de registro</a>
+            </li>
+        </ul>
+    </nav>
+    <div class="barra"> 
+        <span class="esquina-izquierda"></span>
+        <span class="relleno-barra"></span>
+        <span class="esquina-derecha"></span>
+    </div>
+    <div id="content">
+        <div class="box">
+            {% block content %}
+
+            {% endblock content %}
+        </div>
+    </div>
+    <hr>
+    <footer>
+        &copy; Jorge Perez -  {{now.month}}/{{now.year}}
+    </footer>
+
+</body>
+</html>
