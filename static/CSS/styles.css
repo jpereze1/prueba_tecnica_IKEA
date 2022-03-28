@@ -208,7 +208,7 @@
   
   .box a:hover{
       
-      color: #1f7e58;
+      color: #3e6d88;
   }
   
   .box form{
@@ -243,7 +243,7 @@
   .box form button{
       padding: 10px;
       margin-top: 5px;
-      background: #2ba977;
+      background: #3e6d88;
       border: 1px solid #444;
       color: white;
       transition: 300ms all;
@@ -261,7 +261,7 @@
   .alert-success,
   .alert{
       padding: 20px;
-      background: #1f7e58;
+      background: #3e6d88;
       color: white;
       text-align: center;
       margin-bottom: 10px;
@@ -275,7 +275,7 @@
   .box form input[type="button"]:hover,
   .box form button:hover{
       cursor: pointer;
-      background: #1f7e58;
+      background: #3e6d88;
     
   }
   
@@ -334,29 +334,32 @@
   .article-item span .date{
       display: block;
       font-size: 15px;
-      color: gray;
+      color: #333;
       margin-bottom: 10px;
   }
   
   .btn{
       padding: 10px;
-      background: rgb(207, 48, 48);
-      color: white;
+      background: #3e6d88;
+      color: white !important;
       border: 1px solid black;
       display: block;
       margin-top: 15px;
-      width: 100px;
+      width: 70px;
       text-align: center;
+  }
+.btn-warning{
+    background: #972824;
   }
   
-  footer{
-      width: 1250px;
-      background-color: #3e6d88;
-      border: 1px solid #3e6d88;
-      color: #d1d4d6;
-      text-align: center;
-      margin: 0 auto;
-      padding-top: 20px;
+footer{
+    width: 1250px;
+    background-color: #3e6d88;
+    border: 1px solid #3e6d88;
+    color: #d1d4d6;
+    text-align: center;
+    margin: 0 auto;
+    padding-top: 20px;
       padding-bottom: 20px;
       box-shadow: 0px 0px 20px gray;
-  }
+}

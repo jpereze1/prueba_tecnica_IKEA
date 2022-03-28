@@ -1,5 +1,62 @@
 {% extends 'layout.html' %}
 
+{% block title %}
+    Ingreso de clientes
+{% endblock %}
+
+
+
 {% block content %}
-    <h1>Este es el contenido de la pagina para el formulario</h1>
+
+    {# Mensaje success cliente #}
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for message in messages %}
+            <div class= "message alert-success">
+                {{message}}
+            </div>
+        {% endfor %}
+    {% endif %}
+    {%endwith%}
+
+
+    {% if cliente %}
+    <h1>Editar cliente: {{cliente.1}} {{cliente.2}}</h1>
+    {%else %}
+        <h1>Formulario de clientes</h1>
+    {% endif %}
+
+    <form action="" method="POST">
+        <label for="nombre">Nombre</label>
+        <input type="text" class="input" placeholder="Nombre" name="nombre" id="nombre" required {%if cliente %} value="{{cliente.1}}"{% endif %}>
+        
+        <label for="apellido">Apellidos</label>
+        <input type="text" class="input" placeholder="Apellidos" name="apellido" id="apellido" required {%if cliente %} value="{{cliente.2}}"{% endif %}>
+        
+        <label for="telefono">Telefono</label>
+        <input type="tel" class="input" placeholder="809-456-3425" name="telefono" id="telefono" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" {%if cliente %} value="{{cliente.3}}"{% endif %}>
+        
+        <label for="correo">Correo</label>
+        <input type="email" class="input" placeholder="correo" name="correo" id="correo" required {%if cliente %} value="{{cliente.4}}"{% endif %}>
+        
+        <label for="edad">Edad</label>
+        <input type="number" class="input" placeholder="edad" name="edad" id="edad" required {%if cliente %} value="{{cliente.5}}"{% endif %}>
+        
+        <label for="direccion">Direccion</label>
+        <input type="text" class="input" placeholder="direccion" name="direccion" id="direccion" {%if cliente %} value="{{cliente.6}}"{% endif %}>
+        
+        Comida entregada
+        <label><input type="radio" class="input" name="comida" id="comida_si"  required value='1' {%if cliente %} value="{{cliente.7}}"{% endif %}></label>si
+        <label><input type="radio" class="input" name="comida" id="comida_no" required value='0' {%if cliente %} value="{{cliente.7}}"{% endif %}></label>no
+        
+        
+        
+        
+        <label for="observacion">Observacion</label>
+        <textarea name="observacion" rows="5" cols="10" {%if cliente %} value="{{cliente.8}}"{% endif %}></textarea>
+        
+        <input type="submit" class="button" value="Guardar">
+
+
+    </FORM>
 {% endblock %}

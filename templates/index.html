@@ -1,17 +1,77 @@
 {% extends 'layout.html' %}
 
 {% block title %}
-    inicio
+    Listado de clientes
 {% endblock title %}
 
 {% block content %}
 
     <h1>Jornada de almuerzos</h1>
-    <p>Jornada de donación de comida de los residentes de la region </p>
+    <p>Jornada de donación de comida de los residentes de la region. <br>
+    Este es un listado donde estan todos los clientes a los que han recibido una donacion
+    </p>
 
-    {{dato1}}
-    {{dato2}}
-    {#  esto es un comentario #}
+{# Parametros para hacer las Busquedas y flitros#}
 
+
+
+
+
+    {# Codigo donde mostramos un mensage#}
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for message in messages %}
+            <div class= "message alert-success">
+                {{message}}
+            </div>
+        {% endfor %}
+    {% endif %}
+    {%endwith%}
+    
+    {#  esto es la vista de los clientes #}
+
+    {% for cliente in clientes %}
+        <article class="article-item">
+            <div class="data">
+                <h2>
+                    <a href="{{ url_for('vista', cliente_id=cliente.0)}}">
+                    {{cliente.1}} {{cliente.2}}
+                    </a>
+                </h2>
+
+                <span>
+                    Tel.{{cliente.3}}
+                    |
+                    email: {{cliente.4}}
+                    |
+                    {{cliente.5}} años
+                </span>
+
+                <P>
+                    Direccion: {{cliente.6}}
+                </p>
+                <p>
+                   comida entregada: 
+                   {% if cliente.7 == 1 %}
+                        si, fue entregada
+                    {% else %}
+                        no fue entregada
+                   {% endif %} 
+                </p>
+                
+                <span class= "date">
+                    {{cliente.8}}
+                </span>
+                <br>
+                <hr>
+                <p>
+                    <a href="{{ url_for('editar_cliente', cliente_id=cliente.0)}}" class="btn">Editar</a>
+                    <a href="{{ url_for('borrar_cliente', cliente_id=cliente.0)}}" class="btn btn-warning">Eliminar</a>
+                </p>
+            </div>
+            <div class="clearfix"></div>
+        </article>
+            
+    {% endfor %}
 
 {% endblock %}
